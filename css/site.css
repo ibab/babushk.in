@@ -1,0 +1,306 @@
+@import url(normalize.css);
+@import url(syntax.css);
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+
+body {
+    color: #333;
+    width: 780px;
+    margin: 35px auto 0 auto;
+    font-size: 17px;
+    font-family: Georgia, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,
+                 Arial, "Lucida Grande", garamond, palatino, verdana, sans-serif;
+    background: #fcfcfc;
+}
+
+#logo {
+    text-align: center;
+}
+
+#logo::after {
+    content: "";
+    height: 0px;
+    overflow: hidden;
+    margin: 12px auto 0 auto;
+    border-top: 1px solid #bbb;
+    width: 210px;
+    display: block;
+    font-size: 240%;
+}
+
+#logo a {
+    color: #333;
+    font-size: 30px;
+    text-decoration: none;
+    font-family: "Libre Baskerville", serif;
+}
+
+#main-nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#main-nav ul li {
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+#main-nav ul li a {
+    text-decoration: none;
+    color: #888;
+    border-bottom: 2px solid #eee;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+#main-nav ul li a:hover {
+    color: #333;
+    border-bottom: 2px solid #ff4040;
+}
+
+#content p {
+    line-height: 160%;
+}
+
+#date + p:first-letter {
+    float: left;
+    font-size: 260%;
+    margin-top: 10px;
+    margin-right: 4px;
+    font-family: "Libre Baskerville";
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#content h1, #content h2, #content h3 {
+    font-weight: normal;
+    font-size: 24px;
+    font-family: "Libre Baskerville";
+}
+#content h1::after {
+    content: "";
+    display: block;
+    overflow: hidden;
+    height: 1px;
+    width: 200px;
+    margin: 10px auto;
+    border-top: 1px dashed #ddd;
+}
+
+#content h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+code {
+    background: #f0f0f0;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    font-family: "DejaVu Sans Mono", "monospace";
+    padding: 2px 3px;
+    font-size: 13px;
+}
+
+#content {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    min-height: 500px;
+    padding: 0 50px;
+    margin-top: 35px;
+    background: #fff;
+}
+
+#content a {
+    color: #2a5db0;
+    text-decoration: none;
+}
+
+#content a:visited {
+    color: #795db0;
+}
+
+#content a:hover {
+    text-decoration: underline;
+}
+
+#content img {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#content table {
+    margin: 0 auto;
+}
+
+#content table td, th {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+}
+
+#content table th {
+    border-bottom: 3px double #ddd;
+}
+
+#content table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table caption {
+    padding: 10px 20px;
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+#content .caption {
+    text-align: center;
+    padding: 5px 10px;
+    font-style: italic;
+    border: 1px solid #ccc;
+}
+
+pre code {
+    width: 520px;
+    border-radius: 3px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 20px;
+    display: block;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    line-height: 150%;
+    text-shadow: none;
+    color: #333;
+    font-family: "DejaVu Sans Mono", Menlo, "Source Code Pro";
+    font-size: 14px;
+}
+
+#content hr {
+    margin: 40px auto;
+    border: none;
+    border-top: 1px solid #aaa;
+    width: 250px;
+}
+
+#footer {
+    text-align: center;
+    font-size: small;
+    color: #888;
+    margin: 20px 0;
+}
+
+#footer a:link {
+    text-align: center;
+    font-size: small;
+    text-decoration: underline;
+    color: #888;
+    margin: 20px 0;
+}
+
+#footer a:visited {
+    text-align: center;
+    font-size: small;
+    text-decoration: underline;
+    color: #888;
+    margin: 20px 0;
+}
+
+blockquote {
+    font-size: 20px;
+    overflow: hidden;
+    position: relative;
+    border-left: 4px solid #ddd;
+    width: 530px;
+    padding: 1px 30px 1px 40px;
+    margin-left: 0;
+}
+
+blockquote p {
+    line-height: 100%;
+}
+
+#disqus_thread {
+    padding-top: 40px;
+}
+
+#date {
+    font-size: 12px;
+    text-align: center;
+    margin: 0 auto;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+#date::before {
+    content: "~ "
+
+}
+#date::after {
+    content: " ~"
+}
+
+sub, sup {
+    line-height: 0.3em;
+    margin-left: 1px;
+    font-size: 16px;
+}
+
+#footnotediv div {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 3px;
+    max-width: 600px;
+    border: 1px solid #CDBBB5;
+}
+
+#welcome {
+    font-size: 20px;
+    font-family: "Libre Baskerville";
+    margin-left:auto;
+    margin-right:auto;
+    width: 70%;
+    text-align: center;
+    line-height: 2em;
+    margin-bottom: 50px;
+}
+
+.item-date {
+    color: #888;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 5px;
+}
+
+.item-post {
+    vertical-align: middle;
+}
+
+#postlist {
+    text-align: center;
+}
+
+#postlist ul {
+    list-style: none;
+    font-size: 22px;
+}
+
+.amp {
+    font-size: 115%;
+    font-style: italic;
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        width: auto;
+    }
+    
+    #content {
+        border-left: none;
+        border-right: none;
+        padding: 0 20px;
+    }
+}
+
