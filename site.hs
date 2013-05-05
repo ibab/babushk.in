@@ -9,7 +9,11 @@ import Text.Pandoc
 import Hakyll
 import Hakyll.Web.Pandoc
 
-main = hakyll $ do
+myConfiguration = defaultConfiguration {
+  deployCommand = "rsync -avz --delete ./_site/ igor@babushk.in:/srv/http/www"
+}
+
+main = hakyllWith myConfiguration $ do
   match "img/*" $ do
     route   idRoute
     compile copyFileCompiler
