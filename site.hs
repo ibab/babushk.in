@@ -1,11 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Control.Applicative ((<$>))
+import Control.Applicative
+import Control.Monad
 import Data.Monoid ((<>), mappend, mconcat)
 import qualified Data.Map
+
+import Text.Pandoc
 import Hakyll
 import Hakyll.Web.Pandoc
-import Text.Pandoc
 
 main = hakyll $ do
   match "img/*" $ do
@@ -48,10 +50,7 @@ main = hakyll $ do
   match "index.html" $ do
     route idRoute
     compile $ do
-      let firstThree = \x -> do
-            posts <- recentFirst x
-            return $ take 3 posts
-      let indexCtx = field "posts" $ \_ -> postList firstThree
+      let indexCtx = field "posts" $ \_ -> postList $ liftM (take 3) . recentFirst
 
       getResourceBody
         >>= applyAsTemplate indexCtx
