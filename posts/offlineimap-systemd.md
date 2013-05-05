@@ -3,7 +3,7 @@ title: OfflineIMAP with systemd
 date: 2013-05-05
 ---
 
-OfflineIMAP is a mail synchronization utility that allows you download mail over IMAP and save it in the [Maildir](https://en.wikipedia.org/wiki/Maildir) format. It's useful if you want to read your mail with a Mail User Agent (MUA) such as [Mutt](http://www.mutt.org/). Setting up OfflineIMAP has been explained nicely elsewhere:
+OfflineIMAP is a mail synchronization utility that allows you download mail over IMAP and save locally as a [Maildir](https://en.wikipedia.org/wiki/Maildir). It's useful if you want to read your mail with a Mail User Agent (MUA) such as [Mutt](http://www.mutt.org/). Setting up OfflineIMAP has been explained nicely elsewhere:
 
 * [The Homely Mutt (Steve Losh)](http://stevelosh.com/blog/2012/10/the-homely-mutt/)
 * [Mutt + Gmail + Offlineimap (Patrick Brisbin)](http://pbrisbin.com/posts/mutt_gmail_offlineimap)
