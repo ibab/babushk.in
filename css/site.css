@@ -20,9 +20,9 @@ body {
     content: "";
     height: 0px;
     overflow: hidden;
-    margin: 12px auto 0 auto;
+    margin: 10px auto 0 auto;
     border-top: 1px solid #bbb;
-    width: 210px;
+    width: 200px;
     display: block;
     font-size: 240%;
 }
@@ -108,7 +108,7 @@ code {
     border-radius: 3px;
     min-height: 500px;
     padding: 0 50px;
-    margin-top: 35px;
+    margin-top: 20px;
     background: #fff;
 }
 
@@ -117,9 +117,10 @@ code {
     text-decoration: none;
 }
 
-#content a:visited {
-    color: #795db0;
-}
+//#content a:visited {
+//    color: #795db0;
+//}
+
 
 #content a:hover {
     text-decoration: underline;
@@ -196,7 +197,7 @@ pre code {
 #footer a:link {
     text-align: center;
     font-size: small;
-    text-decoration: underline;
+    text-decoration: none;
     color: #888;
     margin: 20px 0;
 }
@@ -204,7 +205,7 @@ pre code {
 #footer a:visited {
     text-align: center;
     font-size: small;
-    text-decoration: underline;
+    text-decoration: none;
     color: #888;
     margin: 20px 0;
 }
@@ -221,10 +222,6 @@ blockquote {
 
 blockquote p {
     line-height: 100%;
-}
-
-#disqus_thread {
-    padding-top: 40px;
 }
 
 #date {
@@ -290,6 +287,11 @@ sub, sup {
 .amp {
     font-size: 115%;
     font-style: italic;
+}
+
+#fleuron {
+    text-align: center;
+    font-size: 200%;
 }
 
 @media screen and (max-width: 700px) {
