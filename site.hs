@@ -36,6 +36,7 @@ main = hakyllWith myConfiguration $ do
     route $ setExtension "html"
     compile $ myPandocC
       >>= loadAndApplyTemplate "templates/post.html"  postCtx
+      >>= saveSnapshot "content"
       >>= loadAndApplyTemplate "templates/default.html" postCtx
       >>= relativizeUrls
 
@@ -63,6 +64,14 @@ main = hakyllWith myConfiguration $ do
 
   match "templates/*" $ compile templateCompiler
 
+  create ["atom.xml"] $ do
+    route idRoute
+    compile $ do
+        let feedCtx = postCtx `mappend` bodyField "description"
+        posts <- fmap (take 10) . recentFirst =<<
+            loadAllSnapshots "posts/*" "content"
+        renderAtom myFeedConfiguration feedCtx posts
+
 postCtx :: Context String
 postCtx = mconcat
   [ mathjaxCtx
@@ -83,6 +92,14 @@ postList sortFilter = do
 pandocOptions = defaultHakyllWriterOptions
   { writerHTMLMathMethod = MathJax ""
   }
+
+myFeedConfiguration = FeedConfiguration
+    { feedTitle       = "Igor Babuschkin | igor@babushk.in"
+    , feedDescription = "My personal website"
+    , feedAuthorName  = "Igor Babuschkin"
+    , feedAuthorEmail = "igor@babushk.in"
+    , feedRoot        = "http://babushk.in/"
+    }
 
 mathjaxCtx = field "mathjax" $ \item -> do
   metadata <- getMetadata (itemIdentifier item)
