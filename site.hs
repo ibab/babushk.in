@@ -94,8 +94,8 @@ pandocOptions = defaultHakyllWriterOptions
   }
 
 myFeedConfiguration = FeedConfiguration
-    { feedTitle       = "Igor Babuschkin | igor@babushk.in"
-    , feedDescription = "My personal website"
+    { feedTitle       = "Igor Babuschkin"
+    , feedDescription = "babushk.in blog"
     , feedAuthorName  = "Igor Babuschkin"
     , feedAuthorEmail = "igor@babushk.in"
     , feedRoot        = "http://babushk.in/"
