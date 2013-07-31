@@ -13,6 +13,13 @@ myConfiguration = defaultConfiguration {
   deployCommand = "rsync -avz --delete ./_site/ igor@babushk.in:/srv/http/www"
 }
 
+navbar =  [ ("Home", "/index.html")
+          , ("About", "/about.html")
+          , ("Posts", "/archive.html")
+          , ("Github", "https://github.com/ibab")
+          ]
+
+
 main = hakyllWith myConfiguration $ do
   match "img/*" $ do
     route   idRoute
@@ -26,30 +33,30 @@ main = hakyllWith myConfiguration $ do
     route   idRoute
     compile copyFileCompiler
 
+  match "templates/*" $ compile templateCompiler
+
   match "about.md" $ do
     route   $ setExtension "html"
     compile $ myPandocC
-      >>= loadAndApplyTemplate "templates/default.html" postCtx
+      >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
 
   match "posts/*" $ do
     route $ setExtension "html"
     compile $ myPandocC
-      >>= loadAndApplyTemplate "templates/post.html"  postCtx
+      >>= loadAndApplyTemplate "templates/post.html"  context
       >>= saveSnapshot "content"
-      >>= loadAndApplyTemplate "templates/default.html" postCtx
+      >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
 
   create ["archive.html"] $ do
     route idRoute
     compile $ do
       let archiveCtx = field "posts" (\_ -> postList recentFirst)
-
       makeItem ""
-        >>= loadAndApplyTemplate "templates/archive.html"
-          archiveCtx
+        >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
         >>= loadAndApplyTemplate "templates/default.html"
-          (constField "title" "Archive" <> postCtx)
+          (constField "title" "Archive" <> context)
         >>= relativizeUrls
 
   match "index.html" $ do
@@ -59,22 +66,34 @@ main = hakyllWith myConfiguration $ do
 
       getResourceBody
         >>= applyAsTemplate indexCtx
-        >>= loadAndApplyTemplate "templates/default.html" postCtx
+        >>= loadAndApplyTemplate "templates/default.html" context
         >>= relativizeUrls
-
-  match "templates/*" $ compile templateCompiler
 
   create ["atom.xml"] $ do
     route idRoute
     compile $ do
-        let feedCtx = postCtx `mappend` bodyField "description"
+        let feedCtx = context `mappend` bodyField "description"
         posts <- fmap (take 10) . recentFirst =<<
             loadAllSnapshots "posts/*" "content"
         renderAtom myFeedConfiguration feedCtx posts
 
-postCtx :: Context String
-postCtx = mconcat
+navbarCompiler item = do
+  -- Get the url of this page
+  url <- fmap (maybe empty toUrl) $ getRoute $ itemIdentifier item
+  return $ generateNavbar url
+
+generateNavbar url = concat $ do
+  (t, l) <- navbar
+  -- if the url matches, this tab is active
+  let cl = if l == url
+        then "class=\"active\""
+        else ""
+  return $ concat ["<li ", cl, "><a href=\"", l, "\">", t, "</a></li>\n"]
+
+context :: Context String
+context = mconcat
   [ mathjaxCtx
+  , field "navbar" navbarCompiler
   , dateField "date" "%B %e, %Y"
   , defaultContext
   ]
@@ -86,7 +105,7 @@ postList sortFilter = do
   posts    <- loadAll "posts/*"
   filtered <- sortFilter posts
   itemTpl  <- loadBody "templates/post-item.html"
-  list     <- applyTemplateList itemTpl postCtx filtered
+  list     <- applyTemplateList itemTpl context filtered
   return list
 
 pandocOptions = defaultHakyllWriterOptions

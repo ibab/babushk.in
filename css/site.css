@@ -55,6 +55,11 @@ body {
     transition: all 0.2s ease-in;
 }
 
+#main-nav ul li.active a {
+    color: #333;
+    border-bottom: 2px solid #bbb;
+}
+
 #main-nav ul li a:hover {
     color: #333;
     border-bottom: 2px solid #ff4040;
