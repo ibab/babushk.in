@@ -1,6 +1,13 @@
+@viewport {
+    /* mobile */
+    zoom: 1;
+    width: device-width;
+}
+
 @import url(normalize.css);
 @import url(syntax.css);
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+
 
 body {
     color: #333;
@@ -9,7 +16,7 @@ body {
     font-size: 17px;
     font-family: Georgia, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,
                  Arial, "Lucida Grande", garamond, palatino, verdana, sans-serif;
-    background: #fcfcfc;
+    background: #fafafa;
 }
 
 #logo {
@@ -181,7 +188,7 @@ pre code {
     line-height: 150%;
     text-shadow: none;
     color: #333;
-    font-family: "DejaVu Sans Mono", Menlo, "Source Code Pro";
+    font-family: "DejaVu Sans Mono", Menlo, "Source Code Pro", monospace;
     font-size: 14px;
 }
 
@@ -299,15 +306,52 @@ sub, sup {
     font-size: 200%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 400px) {
     body {
+        font-size: 17px;
         width: auto;
+        margin: 15px auto;
+        background: #f9f9f9;
     }
-    
+
+    ul {
+       padding-left: 0;
+    }
+
+    pre code {
+        width: 300px;
+    }
+
     #content {
+        border-radius: 0;
         border-left: none;
         border-right: none;
         padding: 0 20px;
     }
+
+    #logo::after {
+        display: none;
+    }
+
+    #logo {
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    #main-nav ul li {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    #main-nav ul li a {
+        border: 1px solid #bbb;
+        padding: 5px 7px;
+    }
+
+    #content h1::after {
+        width: auto;
+    }
+
 }
+
 
