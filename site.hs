@@ -16,9 +16,7 @@ myConfiguration = defaultConfiguration {
 navbar =  [ ("Home", "/index.html")
           , ("About", "/about.html")
           , ("Posts", "/archive.html")
-          , ("Github", "https://github.com/ibab")
           ]
-
 
 main = hakyllWith myConfiguration $ do
   match "img/*" $ do

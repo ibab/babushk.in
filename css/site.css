@@ -8,7 +8,6 @@
 @import url(syntax.css);
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 
-
 body {
     color: #333;
     width: 780px;
@@ -19,8 +18,15 @@ body {
     background: #fafafa;
 }
 
+#social-icons {
+    float: right;
+    margin-right: 150px;
+}
+
 #logo {
     text-align: center;
+    display: inline-block;
+    margin-left: 265px;
 }
 
 #logo::after {
