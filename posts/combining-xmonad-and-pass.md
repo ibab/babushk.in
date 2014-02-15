@@ -82,6 +82,8 @@ promptConfig = defaultXPConfig
 
 The `Pass:` prompt autocompletes the names in the password database and makes working with pass extremely convenient.
 
+![](/files/password-prompt.png)
+
 Please note that in the code snippet above, only top-level passords in `~/password-store` are included in the list of options.
 This could be extended by recursing into subdirectories in `getPasswords`.
 
