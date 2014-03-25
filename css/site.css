@@ -22,6 +22,7 @@ body {
 }
 
 #logo {
+    float: left;
     text-align: center;
     display: inline-block;
     margin-left: 265px;
@@ -36,6 +37,7 @@ body {
     width: 200px;
     display: block;
     font-size: 240%;
+    padding-bottom: 20px;
 }
 
 #logo a {
@@ -47,6 +49,7 @@ body {
 
 #main-nav ul {
     padding: 0;
+    clear: both;
     list-style: none;
     text-align: center;
 }
