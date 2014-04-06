@@ -1,0 +1,64 @@
+==================================================================
+https://keybase.io/ibab
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://babushk.in
+  * I am ibab (https://keybase.io/ibab) on keybase.
+  * I have a public key with fingerprint 144B 7F62 78AC 54BC 998F  2488 ADD1 A3AE ADCE E6BB
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "144b7f6278ac54bc998f2488add1a3aeadcee6bb",
+            "host": "keybase.io",
+            "key_id": "ADD1A3AEADCEE6BB",
+            "uid": "63537f12f2b9d2ebe79e5da05eea9200",
+            "username": "ibab"
+        },
+        "service": {
+            "hostname": "babushk.in",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1396807651,
+    "expire_in": 157680000,
+    "prev": "14f06a9c1d3b4abff58f46c7ddd9884ed93ae1b4badabfd2e5714115ae647e61",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2.0.22 (GNU/Linux)
+
+owE1UV1IU1Ec30yNTCUUicoHPVakzbW73Y/dSdbmBkIZZoVRyjrn3nO3y2p3btNS
+W5a1hgz6Iiij6EHNDKaEIaUvQVSIGi0z6CWVSELBfFEMs3Wu2Hk5nN/X/+Pcytig
+SdLG4h29sQ8zQ9qR13NIc8x673szQIrYCCzNwIPXLkn2urDf55e9QWABFE0jTmKN
+nBkKDI0EnjdLRtpshqJIQRPEUBQwZhECOuBWAqqDxCAYwHpZIRh5OGWRoFa7nbKa
+rA6rvczhYG02wtWvEayJMXESZZSMiBeNGGGOx4wIDQzGkDcaDKowgP1eeA4TtYwg
+AiEdIEiDLGC1X7XsOkvI+oDbo5e9xOXzK0FFUM4S3B0M+iyqLdjoU3XnMXKuJziR
+7BXJxMTQgP0BWfECC0WUQlBWIykTz5oNHMtQOoAv+GQ/dsqqguEITI5aBjes7Uky
+sJAXKNGEaIgkiTFLNCtwoijyZjONRZ4si0I0giJhyaAMR9EUxUDM0hxmKaDOVOdV
+gMVE2oQuEhmQXV4YrPdjEGrT5iZrtEma1JQk9c80aZu2/P/J3VUbE02LD/Xyti96
+ZrX/YH9K5NkTX/fUK1f4fU7BXLTuceG103tmQ1cqPC2f8mr2lDvmcXjXoxzH3+q6
+qXDZtLJ6dH7rwsLbmRbmef5cq+3UouN+zdfJNsowcHFH9c4D8d/VnSaPXTM8nR05
+2XW5ZFjqzk0uqpzoeJBtf5El6OoyP/a1r4xkTla8AePlhcsT6S/Tn7YfWilLjaCq
+/fHr0dHB0c9xWBkEecVHZjdPjEsFup7DkePfYsardOde7c3SoaL2H41dxVmlLdu7
+3Vr7u9rewLJ4I612JDEbPnM3/0TiT9NY6HZrbLKiLwqWsjMSP38Njg+MLd0psO27
+VFUS9fX8Aw==
+=9KYd
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ibab
+
+==================================================================

@@ -61,6 +61,10 @@ main = hakyllWith myConfiguration $ do
           (constField "title" "Archive" <> context)
         >>= relativizeUrls
 
+  match "keybase.txt" $ do
+    route $ constRoute ".well-known/keybase.txt"
+    compile copyFileCompiler
+
   match "index.html" $ do
     route idRoute
     compile $ do
