@@ -84,7 +84,7 @@ The `Pass:` prompt autocompletes the names in the password database and makes wo
 
 ![](/files/password-prompt.png)
 
-Please note that in the code snippet above, only top-level passords in `~/password-store` are included in the list of options.
+Please note that in the code snippet above, only top-level passords in `~/.password-store` are included in the list of options.
 This could be extended by recursing into subdirectories in `getPasswords`.
 
 This example could easily be used to implement other custom prompts.
