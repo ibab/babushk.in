@@ -192,7 +192,8 @@ pre code {
     display: block;
     background: #f0f0f0;
     border: 1px solid #ddd;
-    line-height: 150%;
+    line-height: 120%;
+    white-space: pre;
     text-shadow: none;
     color: #333;
     font-family: "DejaVu Sans Mono", Menlo, "Source Code Pro", monospace;
