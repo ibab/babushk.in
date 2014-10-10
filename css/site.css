@@ -17,8 +17,8 @@ body {
 }
 
 #social-icons {
-    float: right;
-    margin-right: 150px;
+    float: left;
+    margin-left: 20px;
 }
 
 #logo {
