@@ -36,7 +36,7 @@ else
 fi
 ```
 
-Notice that the function only does something if the current shell is running inside a tmux session.
+Note that the function only does something if the current shell is running inside a tmux session.
 
 Then, I define a `preexec` hook that calls `refresh` before each new command that gets executed:
 
