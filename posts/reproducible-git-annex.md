@@ -8,7 +8,7 @@ If not, you should!
 A VCS like git allows you to track and document changes you make to your analysis, easily cooperate with others, roll back to any previous state of your project at any time, and do many other things that can be indispensible to data scientists.
 
 Git is great for managing changes to plain text files (scripts, config files, makefiles, ...), but it's not designed to work with large binary files.
-It there are large binary files checked into the repository, git slows down significantly, to the point of becoming unusable.
+If there are large binary files checked into the repository, git slows down significantly, to the point of becoming unusable.
 
 This means you can't check your 20GB dataset into your git repository.
 For me, this usually means that while my analysis code is neatly managed by git, my datasets float around on several machines, with little to no organization.
