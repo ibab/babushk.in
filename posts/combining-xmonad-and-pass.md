@@ -92,4 +92,7 @@ Give it a try!
 
 You can find my complete XMonad configuration on [Github](https://github.com/ibab/dotfiles/blob/master/xmonad/.xmonad/xmonad.hs).
 
+**edit (2015-04-12):** It seems that this post has inspired the new `XMonad.Prompt.Pass` module in xmonad-contrib.
+It features many improvements over the above implementation and I recommend everyone to use it instead.
+Thanks for putting in the work!
 
