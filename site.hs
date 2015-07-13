@@ -10,15 +10,41 @@ import Text.Pandoc
 import Hakyll
 import Hakyll.Web.Pandoc
 import System.IO.Temp
+import System.FilePath.Posix
+import System.Directory
+
+wordsWhen :: (Char -> Bool) -> String -> [String]
+wordsWhen p s =  case dropWhile p s of
+                      "" -> []
+                      s' -> w : wordsWhen p s''
+                            where (w, s'') = break p s'
 
 ipythonCompiler :: Compiler (Item String)
 ipythonCompiler = do
     fp <- getResourceFilePath
-    unsafeCompiler $ withSystemTempDirectory "foo" $ \dirname -> do
-        out <- readProcess "ipython" ["nbconvert", "--to", "html", "--template", "basic", fp] ""
-        putStrLn out
-    makeItem $ "These are the contents"
+    let base = takeBaseName fp
 
+    let parts = wordsWhen (=='.') base
+
+    if length parts /= 2
+        then fail $ "Notebook " ++ fp ++ " doesn't have correct filename format"
+        else return ()
+
+    let [date, title] = parts
+
+    contents <- unsafeCompiler $ withSystemTempDirectory "nbconvert" $ \dirname -> do
+        copyFile fp (dirname </> base ++ ".ipynb")
+        handle <- runProcess "ipython"
+                             ["nbconvert", "--to", "html", "--template", "basic", base]
+                             (Just dirname)
+                             Nothing
+                             Nothing
+                             Nothing
+                             Nothing
+        waitForProcess handle
+        let newName = dirname </> base ++ ".html"
+        readFile newName
+    makeItem $ contents
 
 myConfiguration = defaultConfiguration {
   deployCommand = "rsync -avz --delete ./_site/ igor@babushk.in:/srv/http/www"
@@ -57,7 +83,7 @@ main = hakyllWith myConfiguration $ do
   match "posts/*.ipynb" $ do
     route $ setExtension "html"
     compile $ ipythonCompiler
-      >>= loadAndApplyTemplate "templates/post.html" (context `mappend` (field "date" $ \i -> return "blabladate"))
+      >>= loadAndApplyTemplate "templates/post.html" (context `mappend` (field "date" $ \i -> return "2015-07-13"))
       >>= saveSnapshot "content"
       >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
@@ -127,7 +153,7 @@ myPandocC = pandocCompilerWith defaultHakyllReaderOptions pandocOptions
 
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
 postList sortFilter = do
-  posts    <- loadAll "posts/*"
+  posts    <- loadAll "posts/*.md"
   filtered <- sortFilter posts
   itemTpl  <- loadBody "templates/post-item.html"
   list     <- applyTemplateList itemTpl context filtered
