@@ -4,10 +4,21 @@ import Control.Applicative
 import Control.Monad
 import Data.Monoid ((<>), mappend, mconcat)
 import qualified Data.Map
+import System.Process
 
 import Text.Pandoc
 import Hakyll
 import Hakyll.Web.Pandoc
+import System.IO.Temp
+
+ipythonCompiler :: Compiler (Item String)
+ipythonCompiler = do
+    fp <- getResourceFilePath
+    unsafeCompiler $ withSystemTempDirectory "foo" $ \dirname -> do
+        out <- readProcess "ipython" ["nbconvert", "--to", "html", "--template", "basic", fp] ""
+        putStrLn out
+    makeItem $ "These are the contents"
+
 
 myConfiguration = defaultConfiguration {
   deployCommand = "rsync -avz --delete ./_site/ igor@babushk.in:/srv/http/www"
@@ -40,6 +51,14 @@ main = hakyllWith myConfiguration $ do
   match "about.md" $ do
     route   $ setExtension "html"
     compile $ myPandocC
+      >>= loadAndApplyTemplate "templates/default.html" context
+      >>= relativizeUrls
+
+  match "posts/*.ipynb" $ do
+    route $ setExtension "html"
+    compile $ ipythonCompiler
+      >>= loadAndApplyTemplate "templates/post.html" (context `mappend` (field "date" $ \i -> return "blabladate"))
+      >>= saveSnapshot "content"
       >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
 
