@@ -51,6 +51,13 @@ main = hakyllWith myConfiguration $ do
       >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
 
+  match "posts/secret/*" $ do
+    route $ setExtension "html"
+    compile $ myPandocC
+      >>= loadAndApplyTemplate "templates/post.html"  context
+      >>= loadAndApplyTemplate "templates/default.html" context
+      >>= relativizeUrls
+
   create ["archive.html"] $ do
     route idRoute
     compile $ do
