@@ -231,7 +231,7 @@ pre code {
 }
 
 blockquote {
-    font-size: 20px;
+    font-size: 17px;
     overflow: hidden;
     position: relative;
     border-left: 4px solid #ddd;
@@ -267,7 +267,7 @@ sub, sup {
 }
 
 #footnotediv div {
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.99);
     padding: 3px;
     max-width: 600px;
     border: 1px solid #CDBBB5;
