@@ -137,7 +137,7 @@ mathjaxCtx = field "mathjax" $ \item -> do
   metadata <- getMetadata (itemIdentifier item)
   return $ case Data.Map.lookup "math" metadata of
     Just "true" -> "<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({messageStyle: \"none\",});</script>\
-                   \<script type=\"text/javascript\" src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" />"
+                   \<script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" />"
     Just _ -> ""
     Nothing -> ""
   
