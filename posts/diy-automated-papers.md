@@ -249,8 +249,8 @@ FILTERED=$(filter-out process.py, $(SHELVES))
 %.pdf: %.tex
     lualatex $^
 
-%.processed.tex: %.tex $(FILTERED)
-    python process.py $(FILTERED) $^
+%.processed.tex: $(FILTERED) %.tex
+    python process.py $^
 
 %.shelve: %.py
     python $^
