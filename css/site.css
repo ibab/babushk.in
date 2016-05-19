@@ -117,7 +117,7 @@ code {
     background: #f0f0f0;
     border-radius: 3px;
     border: 1px solid #ddd;
-    font-family: "DejaVu Sans Mono", "monospace";
+    font-family: "DejaVu Sans Mono", "monospace", "Monaco", "Courier";
     padding: 2px 3px;
     font-size: 13px;
 }
