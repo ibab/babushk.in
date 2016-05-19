@@ -1,5 +1,8 @@
-
-# DIY Automated Papers
+---
+title: DIY Automated Papers
+date: 2016-05-20
+math: true
+---
 
 If you've ever written a scientific paper, a report or a thesis, the following
 might evoke painful memories: Imagine you have some code (for example, a few
