@@ -16,6 +16,7 @@ This blog is about interesting things I've found or random things that I think
 could be helpful for others. I'm interested in 
 
  - Learning new programming languages (Like Go, Rust, Haskell, ...)
+ - Making scientific knowledge more open and reproducible
  - Building awesome tools!
  - Using Linux to do cool stuff
  - Cryptography
