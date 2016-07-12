@@ -4,17 +4,20 @@ title: About
 
 ## About me
 
-Hi! I'm a physics PhD student at the University of Manchester.
+Hi! I'm a physics PhD student studying at the University of Manchester.
 I investigate the fundamental properties of our universe with the
 [LHCb experiment](http://lhcb-public.web.cern.ch/lhcb-public/)
 at the Large Hadron Collider at [CERN](http://home.cern).
-My work mostly consists of solving problems through large scale data processing,
-machine learning and careful application of statistics.
 
-This blog is about interesting things I've found or things that I think
+My work mostly consists of processing our experimental data using large scale
+data processing techniques and interpreting it using machine learning and
+statistics.
+
+This blog is about interesting things I've found or random things that I think
 could be helpful for others. I'm interested in 
 
  - Learning new programming languages (Like Go, Rust, Haskell, ...)
+ - Building awesome tools!
  - Using Linux to do cool stuff
  - Cryptography
  - Machine learning and statistics
