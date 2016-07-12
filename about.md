@@ -11,8 +11,8 @@ at the Large Hadron Collider at [CERN](http://home.cern).
 My work mostly consists of solving problems through large scale data processing,
 machine learning and careful application of statistics.
 
-This blog is mostly about things that I find interesting or that I think could
-be helpful for others. I'm interested in 
+This blog is about interesting things I've found or things that I think
+could be helpful for others. I'm interested in 
 
  - Learning new programming languages (Like Go, Rust, Haskell, ...)
  - Using Linux to do cool stuff
