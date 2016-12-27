@@ -1,5 +1,5 @@
 ---
-title: Adventures in Physics Software: Minuit
+title: "Adventures in Physics Software: Minuit"
 date: 2016-02-02
 math: true
 ---
