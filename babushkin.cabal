@@ -13,7 +13,7 @@ build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
 
-executable babushkin
+executable site
   hs-source-dirs:      ./
   main-is:             Site.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N

@@ -14,5 +14,5 @@ to build the generator.
 
 It can then be used with
 ```bash
-$ stack exec babushkin
+$ stack exec site
 ```
