@@ -3,7 +3,6 @@
 import Control.Applicative
 import Control.Monad
 import Data.Monoid ((<>), mappend, mconcat)
-import qualified Data.Map
 
 import Text.Pandoc
 import Hakyll
@@ -135,7 +134,7 @@ myFeedConfiguration = FeedConfiguration
 
 mathjaxCtx = field "mathjax" $ \item -> do
   metadata <- getMetadata (itemIdentifier item)
-  return $ case Data.Map.lookup "math" metadata of
+  return $ case lookupString "math" metadata of
     Just "true" -> "<script type=\"text/x-mathjax-config\">MathJax.Hub.Config({messageStyle: \"none\",});</script>\
                    \<script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" />"
     Just _ -> ""
