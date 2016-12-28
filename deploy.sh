@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 stack setup
 stack build
 stack exec site clean

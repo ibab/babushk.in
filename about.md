@@ -13,19 +13,8 @@ data processing techniques and interpreting it using machine learning and
 statistics.
 
 This blog is about interesting things I've found or random things that I think
-could be helpful for others. I'm interested in 
-
- - Learning new programming languages (Like Go, Rust, Haskell, ...)
- - Making scientific knowledge more open and reproducible
- - Building awesome tools!
- - Using Linux to do cool stuff
- - Cryptography
- - Machine learning and statistics
- - Web development
- - Quantum mechanics and quantum computing
- - And many other things
-
-I also love contributing to open source projects in my free time.
+could be helpful for others.
+I like contributing to open source projects in my free time.
 Check out my projects [on Github](https://github.com/ibab)!
 
 ## About this website

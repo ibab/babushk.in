@@ -113,9 +113,9 @@ context = mconcat
 myPandocC = pandocCompilerWith defaultHakyllReaderOptions pandocOptions
 
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
-postList sortFilter = do
+postList sortFunc = do
   posts    <- loadAll "posts/*"
-  filtered <- sortFilter posts
+  filtered <- sortFunc posts
   itemTpl  <- loadBody "templates/post-item.html"
   list     <- applyTemplateList itemTpl context filtered
   return list
