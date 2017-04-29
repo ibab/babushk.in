@@ -17,7 +17,7 @@ executable site
   hs-source-dirs:      ./
   main-is:             Site.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base, hakyll==4.9.2.0, pandoc
+  build-depends:       base, hakyll==4.9.5.1, pandoc
   default-language:    Haskell2010
 
 source-repository head
