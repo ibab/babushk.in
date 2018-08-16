@@ -7,6 +7,7 @@ import Data.Monoid ((<>), mappend, mconcat)
 import Text.Pandoc
 import Hakyll
 import Hakyll.Web.Pandoc
+import Hakyll.Web.Sass (sassCompiler)
 
 myConfiguration = defaultConfiguration {
   deployCommand = "rsync -avz --delete ./_site/ igor@babushk.in:/srv/http/www"
@@ -21,6 +22,11 @@ main = hakyllWith myConfiguration $ do
   match "img/*" $ do
     route   idRoute
     compile copyFileCompiler
+
+  match "css/*.sass" $ do
+    route $ setExtension "css"
+    let compressCssItem = fmap compressCss
+    compile (compressCssItem <$> sassCompiler)
 
   match "css/*" $ do
     route   idRoute
