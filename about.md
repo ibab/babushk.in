@@ -4,18 +4,8 @@ title: About
 
 ## About me
 
-Hi! I'm a physics PhD student studying at the University of Manchester.
-I investigate the fundamental properties of our universe with the
-[LHCb experiment](http://lhcb-public.web.cern.ch/lhcb-public/)
-at the Large Hadron Collider at [CERN](http://home.cern).
-My work mostly consists of processing our experimental data using large scale
-data processing techniques and interpreting it using machine learning and
-statistics.
-
-This blog is about interesting things I've found or random things that I think
-could be helpful for others.
-I like contributing to open source projects in my free time.
-Check out my projects [on Github](https://github.com/ibab)!
+I'm a research engineer at Google DeepMind, where I work on applying deep learning and reinforcement learning to challenging problems.
+In the past I studied physics and used to work at the Large Hadron Collider, where I analyzed particle decays with the LHCb experiment.
 
 ## About this website
 

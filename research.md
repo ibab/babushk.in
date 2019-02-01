@@ -2,7 +2,9 @@
 title: Research
 ---
 
-[Google Scholar](https://scholar.google.com/citations?user=_N2COeAAAAAJ)
+I'm mainly interested in improving and scaling up Deep Reinforcement Learning to apply it to challenging problems.
+I've also worked with generative models in the past.
+You can find more publications on my [Google Scholar page](https://scholar.google.com/citations?user=_N2COeAAAAAJ).
 
  - [**AlphaStar: Mastering the Real-Time Strategy Game StarCraft II**](https://deepmind.com/blog/alphastar-mastering-real-time-strategy-game-starcraft-ii/) (Blog post, 2019) \
    Oriol Vinyals, Igor Babuschkin, Junyoung Chung, Michael Mathieu, Max Jaderberg, Wojtek Czarnecki, Andrew Dudzik, Aja Huang, Petko Georgiev, Richard Powell, Timo Ewalds, Dan Horgan, Manuel Kroiss, Ivo Danihelka, John Agapiou, Junhyuk Oh, Valentin Dalibard, David Choi, Laurent Sifre, Yury Sulsky, Sasha Vezhnevets, James Molloy, Trevor Cai, David Budden, Tom Paine, Caglar Gulcehre, Ziyu Wang, Tobias Pfaff, Toby Pohlen, Dani Yogatama, Julia Cohen, Katrina McKinney, Oliver Smith, Tom Schaul, Timothy Lillicrap, Chris Apps, Koray Kavukcuoglu, Demis Hassabis, David Silver

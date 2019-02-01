@@ -15,6 +15,7 @@ myConfiguration = defaultConfiguration {
 
 navbar =  [ ("Home", "/index.html")
           , ("About", "/about.html")
+          , ("Research", "/research.html")
           , ("Posts", "/archive.html")
           ]
 
@@ -42,7 +43,7 @@ main = hakyllWith myConfiguration $ do
 
   match "templates/*" $ compile templateCompiler
 
-  match "about.md" $ do
+  match "*.md" $ do
     route   $ setExtension "html"
     compile $ myPandocC
       >>= loadAndApplyTemplate "templates/default.html" context
