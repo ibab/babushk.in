@@ -16,5 +16,5 @@ You can find the complete source for this website [on Github](https://github.com
 
 ## Contact
 
-You can contact me at [igor@babushk.in](mailto:igor@babushk.in).
+You can contact me at [igor@babuschkin.de](mailto:igor@babuschkin.de).
 My public PGP key can be downloaded from [here](/files/babushkin.pub.asc).
