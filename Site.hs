@@ -9,17 +9,13 @@ import Hakyll
 import Hakyll.Web.Pandoc
 import Hakyll.Web.Sass (sassCompiler)
 
-myConfiguration = defaultConfiguration {
-  deployCommand = "rsync -avz --delete ./_site/ igor@babushk.in:/srv/http/www"
-}
-
 navbar =  [ ("Home", "/index.html")
           , ("About", "/about.html")
           , ("Research", "/research.html")
           , ("Posts", "/archive.html")
           ]
 
-main = hakyllWith myConfiguration $ do
+main = hakyllWith defaultConfiguration $ do
   match "img/*" $ do
     route   idRoute
     compile copyFileCompiler
@@ -54,13 +50,6 @@ main = hakyllWith myConfiguration $ do
     compile $ myPandocC
       >>= loadAndApplyTemplate "templates/post.html"  context
       >>= saveSnapshot "content"
-      >>= loadAndApplyTemplate "templates/default.html" context
-      >>= relativizeUrls
-
-  match "posts/secret/*" $ do
-    route $ setExtension "html"
-    compile $ myPandocC
-      >>= loadAndApplyTemplate "templates/post.html"  context
       >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
 
@@ -146,4 +135,3 @@ mathjaxCtx = field "mathjax" $ \item -> do
                    \<script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\" />"
     Just _ -> ""
     Nothing -> ""
-  
