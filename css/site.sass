@@ -6,20 +6,19 @@ $primary-color: #2b2a0d
 $warm-white: #fcfdf9
 $edea: #edeeea
 $warm-gray: #dfddcf
-$link-blue: #2a8bb0 
+$link-blue: #2a8bb0
 $almost-brown: #9f9886
 $intense-red: #ff4040
 
 
-@viewport 
+@viewport
     /* mobile */
     zoom: 1
     width: device-width
 
-
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic)
 
-body 
+body
     color: $primary-color
     width: 780px
     margin: 35px auto 0 auto
@@ -27,32 +26,30 @@ body
     font-family: $sans-font-stack
     background: $warm-white
 
-
-#social-icons 
-    margin: 5px 0
-    a
-        opacity: 0.5
-        -webkit-transition: all 0.1s ease-in
-        -moz-transition: all 0.1s ease-in
-        transition: all 0.1s ease-in
-
-        &:hover
-            opacity: 1
-
-#logo 
-    margin: 0 auto
+#logo
+    margin: 10px 0
     font-weight: bold
     text-align: center
 
-    a 
+    a
         color: $primary-color
-        font-size: 1.2em
+        font-size: 26px
         text-decoration: none
         font-family: $serif-font-stack
 
+#social-icons
+    vertical-align: middle
+    margin: 0 0 0 10px
+    a
+        opacity: 0.7
+        -webkit-transition: all 0.1s ease-in
+        -moz-transition: all 0.1s ease-in
+        transition: all 0.1s ease-in
+        &:hover
+            opacity: 1
 
-#main-nav 
-    ul 
+#main-nav
+    ul
         margin: 0
         padding: 0
         position: relative
@@ -60,7 +57,7 @@ body
         clear: both
         list-style: none
 
-    li 
+    li
         display: inline-block
         padding: 0
         margin: 0
@@ -71,12 +68,12 @@ body
                 border-bottom: 1px solid #fff
                 background: #fff
                 box-shadow: none
-                
+
                 &:hover
                     box-shadow: none
-            
 
-        a 
+
+        a
             box-shadow: inset 0 -2px 0 0 darken($warm-white, 4%)
             display: inline-block
             border: 1px solid $warm-gray
@@ -88,39 +85,34 @@ body
             -moz-transition: all 0.1s ease-in
             transition: all 0.1s ease-in
 
-            &:hover 
+            &:hover
                 color: $intense_red
                 box-shadow: inset 0 -10px 5px -5px lighten($warm-gray, 9%)
-        
 
 
-
-
-
-#date + p:first-letter 
-    color: $intense-red
-    float: left
-    border: 1px solid $warm-gray
-    line-height: 0.8em
-    display: inline-block
-    overflow: hidden
-    font-size: 2em
-    padding: 10px
-    margin: 3px 10px 0 0
-    font-family: $serif-font-stack
-    text-transform: uppercase
-    font-weight: bold
-
+//#date + p:first-letter
+//    color: $intense-red
+//    float: left
+//    border: 1px solid $warm-gray
+//    line-height: 0.8em
+//    display: inline-block
+//    overflow: hidden
+//    font-size: 2em
+//    padding: 10px
+//    margin: 3px 10px 0 0
+//    font-family: $serif-font-stack
+//    text-transform: uppercase
+//    font-weight: bold
 
 #content h1,
 #content h2,
-#content h3 
+#content h3
     margin-top: 1em
     font-weight: normal
-    font-size: 150%
+    font-size: 130%
     font-family: $serif-font-stack
 
-#content h1::after 
+#content h1::after
     content: ""
     display: block
     overflow: hidden
@@ -130,14 +122,13 @@ body
     border-top: 1px dashed $warm-gray
 
 
-#content h1 
+#content h1
     font-weight: bold
     margin-top: 0
     font-size: 30px
     text-align: center
 
-
-code 
+code
     background: $edea
     border-radius: 3px
     border: 1px solid $warm-gray
@@ -145,60 +136,53 @@ code
     padding: 1px 3px
     font-size: 13px
 
-
-#content 
+#content
     border: 1px solid #dfddcf
     min-height: 500px
     padding: 30px 60px
     background: #fff
     box-shadow: 0 4px 0 -2px darken($warm-white, 4%)
 
-    a 
+    a
         color: $link-blue
         text-decoration: none
 
-        &:hover 
+        &:hover
             text-decoration: underline
 
     p
         line-height: 1.8
         margin-top: 1.8em
 
-
-    img 
+    img
         display: block
         max-width: 600px
         margin: 2em auto 3em auto
 
-
-    table 
+    table
         margin: 0 auto
+        font-size: 16px
 
-
-        td 
+        td
             padding: 10px 20px
             border: 1px solid $warm-gray
 
-
-        th 
+        th
             padding: 10px 20px
             border: 1px solid $warm-gray
             border-bottom: 3px double $warm-gray
 
-
-        tr:nth-child(even) 
+        tr:nth-child(even)
             background: $warm-white
 
-
-        caption 
+        caption
             padding: 10px 20px
             background: $warm-white
             border: 1px solid $warm-gray
             font-weight: bold
             border-bottom: none
 
-
-    .caption 
+    .caption
         text-align: center
         padding: 5px 10px
         font-style: italic
@@ -209,7 +193,7 @@ code
         line-height: 160%
 
 
-    pre code 
+    pre code
         width: 520px
         border-radius: 3px
         margin: 0 auto
@@ -225,14 +209,13 @@ code
         font-family: $mono-font-stack
         font-size: 14px
 
-
-    hr 
+    hr
         margin: 40px auto
         border: none
         border-top: 1px solid $edea
         width: 250px
 
-    blockquote 
+    blockquote
         font-size: 90%
         overflow: hidden
         position: relative
@@ -241,34 +224,31 @@ code
         width: 70%
         padding: 0 30px 0 40px
 
-    blockquote p 
+    blockquote p
         line-height: 1.6
 
-
-
-#footer 
+#footer
     text-align: center
     font-size: small
     color: $almost-brown
     margin: 20px 0
 
     a
-        &:link 
+        &:link
             text-align: center
             font-size: small
             text-decoration: none
             color: #888
             margin: 20px 0
 
-        &:visited 
+        &:visited
             text-align: center
             font-size: small
             text-decoration: none
             color: #888
             margin: 20px 0
 
-
-#date 
+#date
     font-size: 12px
     text-align: center
     margin: 0 auto
@@ -276,21 +256,20 @@ code
     text-transform: uppercase
     letter-spacing: 2px
 
-    &::before 
+    &::before
         content: "— "
 
 
-    &::after 
+    &::after
         content: " —"
 
-
-sub, sup 
+sub, sup
     line-height: 0.3em
     margin-left: 1px
     font-size: 16px
 
 
-#footnotediv div 
+#footnotediv div
     background-color: #fff
     opacity: 1
     box-shadow: 0 4px 0 -2px rgba(0, 0, 0, 0.2)
@@ -303,7 +282,7 @@ sub, sup
 
 
 #welcome
-    font-size: 20px
+    font-size: 18px
     font-family: $serif-font-stack
     margin: 0 auto
     width: 70%
@@ -313,51 +292,47 @@ sub, sup
         line-height: 1.6
 
 
-.item-date 
+.item-date
     color: #888
     font-size: 16px
     line-height: 24px
     padding-left: 5px
     text-align: left
 
-.item-post 
+.item-post
     text-align: left
 
 
-#postlist 
+#postlist
     text-align: center
 
-
-#postlist ul 
+#postlist ul
     list-style: none
-    font-size: 22px
+    font-size: 18px
 
-
-.amp 
+.amp
     font-size: 115%
     font-style: italic
 
-
-#fleuron 
+#fleuron
     text-align: center
     font-size: 200%
 
-
 $mobile-padding: 20px
 
-@media screen and (max-width: 780px) 
-    body 
+@media screen and (max-width: 780px)
+    body
         font-size: 17px
         width: auto
         margin: 15px auto
          background: #f9f9f9
-    
 
-    ul 
+
+    ul
        padding-left: 0
-    
 
-    pre code 
+
+    pre code
         width: 300px
 
     table
@@ -365,14 +340,14 @@ $mobile-padding: 20px
         border-left: none
         border-right: none
         width: 100%
-    
 
-    #content 
+
+    #content
         border-radius: 0
         border-left: none
         border-right: none
         padding: 20px 0
-        
+
         h1,h2,h3,h4,h5,h6
             padding: 0 $mobile-padding
         h1
@@ -387,13 +362,9 @@ $mobile-padding: 20px
         p
             padding: 0 $mobile-padding
 
-    
-
-    #main-nav ul li 
+    #main-nav ul li
         margin-left: 1px
         margin-right: 1px
-    
 
-    #main-nav ul li a 
+    #main-nav ul li a
         padding: 4px 5px
-    

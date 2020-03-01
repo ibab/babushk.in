@@ -4,3 +4,4 @@ site
 _site
 _cache
 .stack-work
+*.lock
