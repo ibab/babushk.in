@@ -41,13 +41,13 @@ main = hakyllWith defaultConfiguration $ do
 
   match "*.md" $ do
     route   $ setExtension "html"
-    compile $ myPandocC
+    compile $ defaultPandocC
       >>= loadAndApplyTemplate "templates/default.html" context
       >>= relativizeUrls
 
   match "posts/*" $ do
     route $ setExtension "html"
-    compile $ myPandocC
+    compile $ postPandocC
       >>= loadAndApplyTemplate "templates/post.html"  context
       >>= saveSnapshot "content"
       >>= loadAndApplyTemplate "templates/default.html" context
@@ -101,12 +101,14 @@ generateNavbar url = concat $ do
 context :: Context String
 context = mconcat
   [ mathjaxCtx
+  , postImageCtx
   , field "navbar" navbarCompiler
   , dateField "date" "%B %e, %Y"
   , defaultContext
   ]
 
-myPandocC = pandocCompilerWith defaultHakyllReaderOptions pandocOptions
+defaultPandocC = pandocCompilerWith defaultHakyllReaderOptions pandocOptions
+postPandocC = pandocCompilerWith defaultHakyllReaderOptions withToc
 
 postList :: ([Item String] -> Compiler [Item String]) -> Compiler String
 postList sortFunc = do
@@ -120,6 +122,18 @@ pandocOptions = defaultHakyllWriterOptions
   { writerHTMLMathMethod = MathJax ""
   }
 
+withToc = pandocOptions
+  { writerTableOfContents = True
+  , writerTemplate = Just tocTemplate
+  , writerNumberSections  = True
+  }
+
+-- Compile template in-line. Why is this so complicated?
+tocTemplate =
+  either error id $ either (error . show) id $
+  runPure $ runWithDefaultPartials $
+  compileTemplate "" "\n<div id=\"toc\"><div class=\"tocbox\">Contents:\n$toc$</div></div>\n<div id=\"body\">$body$</div>"
+
 myFeedConfiguration = FeedConfiguration
     { feedTitle       = "Igor Babuschkin"
     , feedDescription = "babushk.in blog"
@@ -127,6 +141,12 @@ myFeedConfiguration = FeedConfiguration
     , feedAuthorEmail = "igor@babushk.in"
     , feedRoot        = "http://babushk.in/"
     }
+
+postImageCtx = field "image" $ \item -> do
+  metadata <- getMetadata (itemIdentifier item)
+  return $ case lookupString "image" metadata of
+    Just p -> "<img src=" ++ p ++ "></img>"
+    Nothing -> ""
 
 mathjaxCtx = field "mathjax" $ \item -> do
   metadata <- getMetadata (itemIdentifier item)
