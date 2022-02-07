@@ -77,14 +77,6 @@ main = hakyllWith defaultConfiguration $ do
         >>= loadAndApplyTemplate "templates/default.html" context
         >>= relativizeUrls
 
-  create ["atom.xml"] $ do
-    route idRoute
-    compile $ do
-        let feedCtx = context `mappend` bodyField "description"
-        posts <- fmap (take 10) . recentFirst =<<
-            loadAllSnapshots "posts/*" "content"
-        renderAtom myFeedConfiguration feedCtx posts
-
 navbarCompiler item = do
   -- Get the url of this page
   url <- fmap (maybe empty toUrl) $ getRoute $ itemIdentifier item
